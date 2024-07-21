@@ -25,7 +25,8 @@ files_list = [f for f in os.listdir(folder_path) if f.endswith(".csv")]
 selected_file = st.selectbox("Select a file", files_list, index=None)
 
 if selected_file:
-    st.write(f"You selected {selected_file[:selected_file.rfind(".")]} dataset")
+    file_selected = selected_file[:selected_file.rfind(".")]
+    st.write(f"You selected {file_selected} dataset")
     # get complete path of the selected file
     file_path = os.path.join(folder_path, selected_file)
     # reading the csv file as a pandas dataframe
